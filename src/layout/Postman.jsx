@@ -5,7 +5,7 @@ import PostmanReq from "../components/PostmanReq"
 
 const Postman = () => {
   return (
-   <div className="p-6 h-full w-full">
+   <div className="p-6 h-full grid grid-cols-[auto_auto_auto_1fr">
   <PostmanReq/>
     <PostForm/>
     <PostTabs/>

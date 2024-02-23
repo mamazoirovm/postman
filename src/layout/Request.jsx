@@ -29,13 +29,13 @@ dispatch(setCurrentRequest(id))
 }
  
   return (
-    <div className="bg-slate-200 border-r p-4 ">
+    <div className="bg-slate-100 border-r border-slate-500 p-4 ">
       <button onClick={addNewRequest} className="text-3xl">
         +
       </button>
       <ul>
         {requests.map((request, index) =>(
-          <li onClick={()=> handleRequse(request.id)} className={`border mt-1 mb-2 bg-slate-200 rounded-md p-2 border-black cursor-pointer ${currentRequest === request.id ? 'bg-slate-300' : "bg-slate-200"}`} key={request.id}>
+          <li onClick={()=> handleRequse(request.id)} className={`border mt-1 mb-2 bg-slate-200 rounded-md p-2 border-slate-400 cursor-pointer ${currentRequest === request.id ? 'bg-slate-200' : "bg-slate-100"}`} key={request.id}>
             {index + 1 }. {"  "}
              { request.method} {""}
             {request.name}</li>

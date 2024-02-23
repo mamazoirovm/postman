@@ -1,7 +1,7 @@
 const PostTable = () => {
     return (
       <div className="mt-5">
-        <h1 className="text-slate-400">Query Table params</h1>
+        <h1 className="text-slate-400 mb-3">Query Table params</h1>
         <table className="border border-slate-700 border-collapse w-full">
           <thead>
             <tr>

@@ -1,7 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { changeRequest } from "../store/PostmanSlice";
+import useReq from "../hooks/useReq";
 
 const PostForm = () => {
+
+  const {sendRequest} = useReq()
   const dispatch = useDispatch();
   const handleSelected = (e) => {
     dispatch(
@@ -15,15 +18,11 @@ const PostForm = () => {
     state.requests.find(re => re.id === state.currentRequest)
   );
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
 
     if (request.url) {
-      const res = await fetch(request.url, {
-        method: request?.method || "GET",
-      });
-      const data = await res.json()
-      console.log(res, data);
+      sendRequest(request.url)
     }
   };
   return (
@@ -76,7 +75,7 @@ const PostForm = () => {
               })
             )
           }
-          value={request?.url}
+          value={request?.url || ""}
           type="text"
           className="border-l w-[85%]  flex-1 p-2"
           placeholder="enter a url "

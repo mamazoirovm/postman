@@ -16,8 +16,8 @@ const PostmanReq = () => {
         })
       )}
         id={"postman-request"}
-        className="font-medium"
-        value={request?.name}
+        className="font-medium p-2"
+        value={request?.name || ""}
         type="text"
       />
     </div>
